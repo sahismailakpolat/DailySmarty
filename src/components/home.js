@@ -7,9 +7,11 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <Logo />
-        <Searchbar />
-        <RecentPosts />
+        <div>
+          <Logo />
+          <Searchbar />
+          <RecentPosts />
+        </div>
       </div>
     );
   }
