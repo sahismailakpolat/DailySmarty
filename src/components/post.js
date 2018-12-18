@@ -41,7 +41,7 @@ class Posts extends Component {
             return (
                 <li className="recent-post">
                     <div className="recent-post__title">
-                        {this.props.title}
+                        <a href={this.props.url_for_post}>{this.props.title}</a>
                     </div>
                     <div className="recent-post__topics">
                         {this.renderTopics()}
@@ -50,15 +50,15 @@ class Posts extends Component {
             )
         } else if (this.props.type == 'result') {
             return (
-                <li className="result-post">
+                <li className="result-post"
+                    onMouseEnter={() => this.setState({ height: 70 })}
+                    onMouseLeave={() => this.setState({ height: 0 })}
+                >
                     <div className="result-post__topics">
                         {this.renderTopics()}
                     </div>
                     <div className="result-post__title">
-                        <a href={this.props.url_for_post}
-                            onMouseEnter={() => this.setState({ height: 70 })}
-                            onMouseLeave={() => this.setState({ height: 0 })}
-                        >
+                        <a href={this.props.url_for_post}>
                             {this.props.title}
                         </a>
                     </div>
